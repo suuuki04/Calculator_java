@@ -7,23 +7,23 @@ public class Calculator {
     private List<Double> results = new ArrayList<Double>();
 
     public double calculate(int a, int b, char operator) {
-        double answer = 0;
+        double result = 0;
 
         switch (operator) {
             case '+':
-                answer = a + b;
+                result = a + b;
                 break;
             case '-':
-                answer = a - b;
+                result = a - b;
                 break;
             case '*':
-                answer = a * b;
+                result = a * b;
                 break;
             case '/':
                 if (b != 0) {
-                    answer = a / b;
+                    result = a / b;
                 } else {
-                    System.out.println("나눗셈 연산에서 분모(두번쨰정수)에 0이 입력될 수 없습니다.")
+                    System.out.println("나눗셈 연산에서 분모(두번쨰정수)에 0이 입력될 수 없습니다.");
                 }
                 break;
             default:
@@ -32,6 +32,14 @@ public class Calculator {
         }
         results.add(result);
         return result;
+    }
+    public void removeFirstResult() {
+        if (!results.isEmpty()) {
+            results.remove(0);  // 리스트의 첫 번째 요소 삭제
+            System.out.println("가장 먼저 저장된 결과가 삭제되었습니다.");
+        } else {
+            System.out.println("삭제할 결과가 없습니다.");
+        }
     }
 
     public List<Double> getResults() {
